@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+input {
+    padding: 0 12px;
+}
+.container {
+    width: 85%;
+    height: 800px;
+    border: none;
+    border-radius: 8px;
+    background-color: antiquewhite;
+    box-shadow: 5px 5px 8px rgb(99, 99, 99);
+    margin: 35px 0 20px 110px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.container .first_heading {
+    margin-top: 2px;
+    font-size: 34px;
+    font-weight:bold;
+}
+.box1 {
+    width: 85%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.box2 {
+    width: 85%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.data_convertor {
+    width: 380px;
+    height: 200px;
+    background-image: radial-gradient( circle 957px at 8.7% 50.5%,  rgba(246,191,13,1) 0%, rgba(249,47,47,1) 90% );
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: solid white 1px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 8px rgb(99, 99, 99);
+}
+.data_convertor h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.data_convertor label {
+    margin-left: 22px;
+}
+.data_convertor .part1 select {
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+}
+.data_convertor .part1 input {
+    width: 130px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 14px;
+}
+.data_convertor .part2 select {
+    margin-left: 16px;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.data_convertor .part2 input {
+    width: 130px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    margin-left: 14px;
+}
+
+.length_convertor {
+    width: 380px;
+    height: 200px;
+    background-image: radial-gradient( circle 957px at 8.7% 50.5%,  rgba(246,191,13,1) 0%, rgba(249,47,47,1) 90% );
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: solid white 1px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 8px rgb(99, 99, 99);
+}
+.length_convertor h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.length_convertor label {
+    margin-left: 18px;
+}
+.length_convertor .part1 select {
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+}
+.length_convertor .part1 input {
+    width: 130px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 14px;
+}
+.length_convertor .part2 select {
+    margin-left: 16px;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.length_convertor .part2 input {
+    width: 130px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    margin-left: 14px;
+}
+.mass_convertor {
+    width: 380px;
+    height: 200px;
+    background-image: radial-gradient( circle 957px at 8.7% 50.5%,  rgba(246,191,13,1) 0%, rgba(249,47,47,1) 90% );
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: solid white 1px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 8px rgb(99, 99, 99);
+}
+.mass_convertor h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.mass_convertor label {
+    margin-left: 18px;
+}
+.mass_convertor .part1 select {
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+}
+.mass_convertor .part1 input {
+    width: 120px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 18px;
+}
+.mass_convertor .part2 select {
+    margin-left: 16px;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.mass_convertor .part2 input {
+    width: 120px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 18px;
+}
+.time_convertor {
+    width: 380px;
+    height: 200px;
+    background-image: radial-gradient( circle 957px at 8.7% 50.5%,  rgba(246,191,13,1) 0%, rgba(249,47,47,1) 90% );
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: solid white 1px;
+    border-radius: 14px;
+    box-shadow: 5px 5px 8px rgb(99, 99, 99);
+}
+.time_convertor h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.time_convertor label {
+    margin-left: 18px;
+}
+.time_convertor .part1 select {
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+}
+.time_convertor .part1 input {
+    width: 120px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 18px;
+}
+.time_convertor .part2 select {
+    margin-left: 16px;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.time_convertor .part2 input {
+    width: 120px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 18px;
+}
+.time_convertor .part3 {
+    margin-left: 20px;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+

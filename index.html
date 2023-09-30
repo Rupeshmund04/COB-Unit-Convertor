@@ -1,0 +1,191 @@
+<!-- Author : Rupesh Kumar Mund -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Convertor | CodesOnBytes</title>
+
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/Responsive.css">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="first_heading">Unit Convertor</h2>
+      
+      <!-- First Horizontal Box -->
+      <section class="box1">
+        <!-- Data Convertor -->
+        <div class="data_convertor">
+          <h3>Data Convertor</h3>
+
+          <div class="part1">
+            <label for="inputData">From: </label>
+            <select name="data" id="inputTypeData">
+              <option value="gigabyte">Gigabyte Gb</option>
+              <option value="megabyte">Megabyte Mb</option>
+              <option value="kilobyte">Kilobyte Kb</option>
+            </select>
+            
+            <input
+              type="number"
+              name="byte_number"
+              id="inputData"
+              placeholder="  Input Data"
+              min="0"
+              max="100"
+            />
+          </div>
+
+          <hr />
+
+          <div class="part2">
+            <label for="resultData">To: </label>
+            <select name="data" id="resultTypeData">
+              <option value="gigabyte">Gigabyte Gb</option>
+              <option value="megabyte">Megabyte Mb</option>
+              <option value="kilobyte">Kilobyte Kb</option>
+            </select>
+            <input
+              type="number"
+              name="byte_number"
+              id="resultData"
+              placeholder="  Output"
+            />
+          </div>
+        </div>
+
+        <!-- Length Convertor -->
+        <div class="length_convertor">
+          <h3>Length Convertor</h3>
+
+          <div class="part1">
+            <label for="inputLength">From: </label>
+            <select name="data" id="inputTypeLength">
+              <option value="meter">meter m</option>
+              <option value="kilometer">Kilometer Km</option>
+              <option value="centimeter">Centimeter Cm</option>
+            </select>
+
+            <input
+              type="number"
+              name="byte_number"
+              id="inputLength" min="0"
+              placeholder="  Input Length"
+            />
+          </div>
+
+          <hr />
+
+          <div class="part2">
+            <label for="resultLength">To: </label>
+            <select name="data" id="resultTypeLength">
+              <option value="meter">meter m</option>
+              <option value="kilometer">Kilometer Km</option>
+              <option value="centimeter">Centimeter Cm</option>
+            </select>
+
+            <input
+              type="number"
+              name="byte_number"
+              id="resultLength"
+              placeholder="  Output"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Second Horizontal Box -->
+      <section class="box2">
+        <!-- Mass Convertor -->
+        <div class="mass_convertor">
+          <h3>Mass Convertor</h3>
+
+          <div class="part1">
+            <label for="inputMass">From: </label>
+            <select name="mass" id="inputTypeMass">
+              <option value="gram">gram g</option>
+              <option value="kilogram">Kilogram kg</option>
+              <option value="pound">pound lb</option>
+            </select>
+
+            <input
+              type="number"
+              name="mass"
+              id="inputMass" min="0"
+              placeholder="  Input Mass"
+            />
+          </div>
+
+          <hr />
+
+          <div class="part2">
+            <label for="resultMass">To: </label>
+            <select name="data" id="resultTypeMass">
+              <option value="pound">pound lb</option>
+              <option value="kilogram">Kilogram kg</option>
+              <option value="gram">gram g</option>
+            </select>
+            <input
+              type="number"
+              name="mass"
+              id="resultMass"
+              placeholder=" Output"
+            />
+          </div>
+        </div>
+
+        <!-- Time Convertor -->
+        <div class="time_convertor">
+          <h3>Time Convertor</h3>
+
+          <div class="part1">
+            <label for="inputTime">From: </label>
+            <select name="time" id="inputTypeTime">
+              <option value="year">Year y</option>
+              <option value="month">Month m</option>
+              <option value="week">Week wk</option>
+              <option value="day">Day d</option>
+              <option value="hour">Hour hr</option>
+              <option value="minute">Minute min</option>
+              <option value="second">Second s</option>
+            </select>
+            <input
+              type="number"
+              name="byte_number"
+              id="inputTime" min="0"
+              placeholder="  Input Time"
+            />
+          </div>
+
+          <div class="part2">
+            <label for="resultTime">To: </label>
+            <select name="data" id="resultTypeTime">
+              <option value="year">Year y</option>
+              <option value="month">Month m</option>
+              <option value="week">Week wk</option>
+              <option value="day">Day d</option>
+              <option value="hour">Hour hr</option>
+              <option value="minute">Minute min</option>
+              <option value="second">Second s</option>
+            </select>
+
+            <input
+              type="number"
+              name="byte_number"
+              id="resultTime"
+              placeholder="Output"
+            />
+          </div>
+        </div>
+      </section>
+
+      
+
+    </div>
+
+    <script src="/JavaScript/script.js"></script>
+  </body>
+</html>
