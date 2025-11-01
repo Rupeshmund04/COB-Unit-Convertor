@@ -1,191 +1,422 @@
 <!-- Author : Rupesh Kumar Mund -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit Convertor | CodesOnBytes</title>
+    <link rel="stylesheet" href="/COB-UnitConvertor/style.css" />
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-    <link rel="stylesheet" href="/COB-Unit-Convertor/style.css" />
-    <link rel="stylesheet" href="/COB-Unit-Convertor/Responsive.css">
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
 
-  </head>
-
-  <body>
     <div class="container">
-      <h2 class="first_heading">Unit Convertor</h2>
-      
-      <!-- First Horizontal Box -->
-      <section class="box1">
+        <h1 class="main-title">
+            <i class="fas fa-exchange-alt"></i> Unit Converter
+        </h1>
+        
         <!-- Data Convertor -->
-        <div class="data_convertor">
-          <h3>Data Convertor</h3>
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-database"></i>
+                <h3>Data Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputData">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeData">
+                            <option value="gigabyte">Gigabyte (GB)</option>
+                            <option value="megabyte">Megabyte (MB)</option>
+                            <option value="kilobyte">Kilobyte (KB)</option>
+                        </select>
+                        <input type="number" id="inputData" placeholder="Enter value" min="0" />
+                    </div>
+                </div>
 
-          <div class="part1">
-            <label for="inputData">From: </label>
-            <select name="data" id="inputTypeData">
-              <option value="gigabyte">Gigabyte Gb</option>
-              <option value="megabyte">Megabyte Mb</option>
-              <option value="kilobyte">Kilobyte Kb</option>
-            </select>
-            
-            <input
-              type="number"
-              name="byte_number"
-              id="inputData"
-              placeholder="  Input Data"
-              min="0"
-              max="100"
-            />
-          </div>
+                <button class="swap-btn" onclick="swapUnits('Data')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
 
-          <hr />
-
-          <div class="part2">
-            <label for="resultData">To: </label>
-            <select name="data" id="resultTypeData">
-              <option value="gigabyte">Gigabyte Gb</option>
-              <option value="megabyte">Megabyte Mb</option>
-              <option value="kilobyte">Kilobyte Kb</option>
-            </select>
-            <input
-              type="number"
-              name="byte_number"
-              id="resultData"
-              placeholder="  Output"
-            />
-          </div>
-        </div>
+                <div class="input-group">
+                    <label for="resultData">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeData">
+                            <option value="megabyte">Megabyte (MB)</option>
+                            <option value="gigabyte">Gigabyte (GB)</option>
+                            <option value="kilobyte">Kilobyte (KB)</option>
+                        </select>
+                        <input type="number" id="resultData" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Length Convertor -->
-        <div class="length_convertor">
-          <h3>Length Convertor</h3>
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-ruler"></i>
+                <h3>Length Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputLength">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeLength">
+                            <option value="meter">Meter (m)</option>
+                            <option value="kilometer">Kilometer (km)</option>
+                            <option value="centimeter">Centimeter (cm)</option>
+                        </select>
+                        <input type="number" id="inputLength" placeholder="Enter value" min="0" />
+                    </div>
+                </div>
 
-          <div class="part1">
-            <label for="inputLength">From: </label>
-            <select name="data" id="inputTypeLength">
-              <option value="meter">meter m</option>
-              <option value="kilometer">Kilometer Km</option>
-              <option value="centimeter">Centimeter Cm</option>
-            </select>
+                <button class="swap-btn" onclick="swapUnits('Length')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
 
-            <input
-              type="number"
-              name="byte_number"
-              id="inputLength" min="0"
-              placeholder="  Input Length"
-            />
-          </div>
+                <div class="input-group">
+                    <label for="resultLength">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeLength">
+                            <option value="kilometer">Kilometer (km)</option>
+                            <option value="meter">Meter (m)</option>
+                            <option value="centimeter">Centimeter (cm)</option>
+                        </select>
+                        <input type="number" id="resultLength" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <hr />
-
-          <div class="part2">
-            <label for="resultLength">To: </label>
-            <select name="data" id="resultTypeLength">
-              <option value="meter">meter m</option>
-              <option value="kilometer">Kilometer Km</option>
-              <option value="centimeter">Centimeter Cm</option>
-            </select>
-
-            <input
-              type="number"
-              name="byte_number"
-              id="resultLength"
-              placeholder="  Output"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Second Horizontal Box -->
-      <section class="box2">
         <!-- Mass Convertor -->
-        <div class="mass_convertor">
-          <h3>Mass Convertor</h3>
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-weight"></i>
+                <h3>Mass Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputMass">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeMass">
+                            <option value="kilogram">Kilogram (kg)</option>
+                            <option value="gram">Gram (g)</option>
+                            <option value="pound">Pound (lb)</option>
+                        </select>
+                        <input type="number" id="inputMass" placeholder="Enter value" min="0" />
+                    </div>
+                </div>
 
-          <div class="part1">
-            <label for="inputMass">From: </label>
-            <select name="mass" id="inputTypeMass">
-              <option value="gram">gram g</option>
-              <option value="kilogram">Kilogram kg</option>
-              <option value="pound">pound lb</option>
-            </select>
+                <button class="swap-btn" onclick="swapUnits('Mass')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
 
-            <input
-              type="number"
-              name="mass"
-              id="inputMass" min="0"
-              placeholder="  Input Mass"
-            />
-          </div>
-
-          <hr />
-
-          <div class="part2">
-            <label for="resultMass">To: </label>
-            <select name="data" id="resultTypeMass">
-              <option value="pound">pound lb</option>
-              <option value="kilogram">Kilogram kg</option>
-              <option value="gram">gram g</option>
-            </select>
-            <input
-              type="number"
-              name="mass"
-              id="resultMass"
-              placeholder=" Output"
-            />
-          </div>
-        </div>
+                <div class="input-group">
+                    <label for="resultMass">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeMass">
+                            <option value="pound">Pound (lb)</option>
+                            <option value="kilogram">Kilogram (kg)</option>
+                            <option value="gram">Gram (g)</option>
+                        </select>
+                        <input type="number" id="resultMass" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Time Convertor -->
-        <div class="time_convertor">
-          <h3>Time Convertor</h3>
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-clock"></i>
+                <h3>Time Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputTime">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeTime">
+                            <option value="hour">Hour (hr)</option>
+                            <option value="minute">Minute (min)</option>
+                            <option value="second">Second (s)</option>
+                            <option value="day">Day (d)</option>
+                            <option value="week">Week (wk)</option>
+                            <option value="month">Month (m)</option>
+                            <option value="year">Year (y)</option>
+                        </select>
+                        <input type="number" id="inputTime" placeholder="Enter value" min="0" />
+                    </div>
+                </div>
 
-          <div class="part1">
-            <label for="inputTime">From: </label>
-            <select name="time" id="inputTypeTime">
-              <option value="year">Year y</option>
-              <option value="month">Month m</option>
-              <option value="week">Week wk</option>
-              <option value="day">Day d</option>
-              <option value="hour">Hour hr</option>
-              <option value="minute">Minute min</option>
-              <option value="second">Second s</option>
-            </select>
-            <input
-              type="number"
-              name="byte_number"
-              id="inputTime" min="0"
-              placeholder="  Input Time"
-            />
-          </div>
+                <button class="swap-btn" onclick="swapUnits('Time')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
 
-          <div class="part2">
-            <label for="resultTime">To: </label>
-            <select name="data" id="resultTypeTime">
-              <option value="year">Year y</option>
-              <option value="month">Month m</option>
-              <option value="week">Week wk</option>
-              <option value="day">Day d</option>
-              <option value="hour">Hour hr</option>
-              <option value="minute">Minute min</option>
-              <option value="second">Second s</option>
-            </select>
+                <div class="input-group">
+                    <label for="resultTime">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeTime">
+                            <option value="minute">Minute (min)</option>
+                            <option value="hour">Hour (hr)</option>
+                            <option value="second">Second (s)</option>
+                            <option value="day">Day (d)</option>
+                            <option value="week">Week (wk)</option>
+                            <option value="month">Month (m)</option>
+                            <option value="year">Year (y)</option>
+                        </select>
+                        <input type="number" id="resultTime" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <input
-              type="number"
-              name="byte_number"
-              id="resultTime"
-              placeholder="Output"
-            />
-          </div>
-        </div>
-      </section>
+        <!-- Temperature Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-thermometer-half"></i>
+                <h3>Temperature Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputTemperature">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeTemperature">
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                        <input type="number" id="inputTemperature" placeholder="Enter value" step="0.01" />
+                    </div>
+                </div>
 
-      
+                <button class="swap-btn" onclick="swapUnits('Temperature')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
 
+                <div class="input-group">
+                    <label for="resultTemperature">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeTemperature">
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                        <input type="number" id="resultTemperature" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speed Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Speed Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputSpeed">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeSpeed">
+                            <option value="kmh">Kilometer/Hour (km/h)</option>
+                            <option value="ms">Meter/Second (m/s)</option>
+                            <option value="mph">Miles/Hour (mph)</option>
+                        </select>
+                        <input type="number" id="inputSpeed" placeholder="Enter value" min="0" step="0.01" />
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swapUnits('Speed')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="resultSpeed">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeSpeed">
+                            <option value="ms">Meter/Second (m/s)</option>
+                            <option value="kmh">Kilometer/Hour (km/h)</option>
+                            <option value="mph">Miles/Hour (mph)</option>
+                        </select>
+                        <input type="number" id="resultSpeed" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Area Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-vector-square"></i>
+                <h3>Area Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputArea">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeArea">
+                            <option value="sqmeter">Square Meter (m²)</option>
+                            <option value="acre">Acre</option>
+                            <option value="hectare">Hectare (ha)</option>
+                        </select>
+                        <input type="number" id="inputArea" placeholder="Enter value" min="0" step="0.01" />
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swapUnits('Area')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="resultArea">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeArea">
+                            <option value="acre">Acre</option>
+                            <option value="sqmeter">Square Meter (m²)</option>
+                            <option value="hectare">Hectare (ha)</option>
+                        </select>
+                        <input type="number" id="resultArea" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volume Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-flask"></i>
+                <h3>Volume Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputVolume">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeVolume">
+                            <option value="liter">Liter (L)</option>
+                            <option value="gallon">Gallon (gal)</option>
+                            <option value="milliliter">Milliliter (mL)</option>
+                        </select>
+                        <input type="number" id="inputVolume" placeholder="Enter value" min="0" step="0.01" />
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swapUnits('Volume')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="resultVolume">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeVolume">
+                            <option value="gallon">Gallon (gal)</option>
+                            <option value="liter">Liter (L)</option>
+                            <option value="milliliter">Milliliter (mL)</option>
+                        </select>
+                        <input type="number" id="resultVolume" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Energy Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-bolt"></i>
+                <h3>Energy Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputEnergy">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeEnergy">
+                            <option value="joule">Joule (J)</option>
+                            <option value="calorie">Calorie (cal)</option>
+                            <option value="kwh">Kilowatt-hour (kWh)</option>
+                        </select>
+                        <input type="number" id="inputEnergy" placeholder="Enter value" min="0" step="0.01" />
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swapUnits('Energy')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="resultEnergy">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeEnergy">
+                            <option value="calorie">Calorie (cal)</option>
+                            <option value="joule">Joule (J)</option>
+                            <option value="kwh">Kilowatt-hour (kWh)</option>
+                        </select>
+                        <input type="number" id="resultEnergy" placeholder="Result" readonly />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currency Convertor -->
+        <section class="converter-card">
+            <div class="card-header">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Currency Converter</h3>
+            </div>
+            <div class="converter-body">
+                <div class="input-group">
+                    <label for="inputCurrency">From</label>
+                    <div class="input-row">
+                        <select id="inputTypeCurrency">
+                            <option value="usd">US Dollar (USD)</option>
+                            <option value="eur">Euro (EUR)</option>
+                            <option value="gbp">British Pound (GBP)</option>
+                            <option value="inr">Indian Rupee (INR)</option>
+                            <option value="jpy">Japanese Yen (JPY)</option>
+                            <option value="cad">Canadian Dollar (CAD)</option>
+                            <option value="aud">Australian Dollar (AUD)</option>
+                        </select>
+                        <input type="number" id="inputCurrency" placeholder="Enter value" min="0" step="0.01" />
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swapUnits('Currency')">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="input-group">
+                    <label for="resultCurrency">To</label>
+                    <div class="input-row">
+                        <select id="resultTypeCurrency">
+                            <option value="eur">Euro (EUR)</option>
+                            <option value="usd">US Dollar (USD)</option>
+                            <option value="gbp">British Pound (GBP)</option>
+                            <option value="inr">Indian Rupee (INR)</option>
+                            <option value="jpy">Japanese Yen (JPY)</option>
+                            <option value="cad">Canadian Dollar (CAD)</option>
+                            <option value="aud">Australian Dollar (AUD)</option>
+                        </select>
+                        <input type="number" id="resultCurrency" placeholder="Result" readonly />
+                    </div>
+                </div>
+                <div class="currency-note">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Live rates updated daily</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Developed with <i class="fas fa-heart"></i> by Rupesh Kumar Mund</p>
+        </footer>
     </div>
 
     <script src="/COB-Unit-Convertor/script.js"></script>
-  </body>
+</body>
 </html>
